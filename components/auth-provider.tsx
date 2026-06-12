@@ -60,7 +60,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     fetch("/api/settings", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ language: locale }).catch?.(() => null)
+      body: body: JSON.stringify({ language: locale })
     }).catch(() => undefined);
   }, [locale]);
 

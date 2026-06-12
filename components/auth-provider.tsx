@@ -58,10 +58,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     localStorage.setItem("devlis-lang", locale);
     fetch("/api/settings", {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: body: JSON.stringify({ language: locale })
-    }).catch(() => undefined);
+  method: "PUT",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    language: locale,
+  }),
+}).catch(() => undefined);
   }, [locale]);
 
   useEffect(() => {
